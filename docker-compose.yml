@@ -1,0 +1,54 @@
+networks:
+  trans:
+    name: trans
+volumes:
+  front:
+    driver: local
+    driver_opts:
+      type: none
+      device: frontend/files
+      o: bind
+  database:
+    driver: local
+    driver_opts:
+      type: none
+      device: /Users/atoukmat/database
+      o: bind
+services:
+  postgres:
+    image: postgres:14-alpine  
+    container_name: postgres 
+    # build: ./services/postgres
+    volumes:
+      - database:/var/lib/postgresql/data
+    env_file: .env
+    networks:
+      - trans
+  frontend:
+    container_name: frontend
+    build: frontend
+    depends_on:
+      - backend
+    restart: always
+    # volumes:
+    #   - front:/files
+    networks:
+      - trans
+  back:
+    container_name: back
+    build: back
+    depends_on:
+      - postgres
+    env_file: .env
+    restart: always
+    networks:
+      - trans
+  nginx:
+    container_name: nginx 
+    build: ./services/nginx
+    ports:
+      - "443:443"
+    env_file: .env
+    restart: always
+    networks:
+      - trans

@@ -1,0 +1,60 @@
+datasource db {
+	provider = "sqlite"
+	url      = "file:./dev.db"
+}
+
+generator client {
+	provider = "prisma-client-js"
+}
+// https://www.prisma.io/docs/orm/prisma-schema/overview
+
+model Friends {
+	userId       Int      @id @default(autoincrement())
+	accepted Boolean
+	date     Int
+	friendId Int 
+	user User? @relation("user",fields: [userId],references: [id])
+}
+
+// mohim https://www.prisma.io/docs/orm/prisma-schema/data-model/relations/many-to-many-relations#querying-an-explicit-many-to-many
+
+// https://www.luzmo.com/blog/database-relationships
+
+model User {
+	id             		Int       @id @default(autoincrement())
+	login          		String    @unique
+	email          		String    @unique
+	name           		String
+	password       		String
+	tfa            		Boolean
+	tfa_key        		String
+	resetToken      String?   
+    resetTokenExpiry DateTime? 
+	friends 			Friends[] @relation("user")
+	sentMessages   		Message[] @relation("sentMessages")
+	receivedMessages    Message[] @relation("receivedMessages")
+	blockedBy			BlockedUser[] @relation("blocked")
+	blocked				BlockedUser[] @relation("blocker")
+}
+
+
+model Message {
+	id						Int				@id @default(autoincrement())
+	text					String
+	sender					User			@relation("sentMessages", fields: [senderId], references: [id])
+	receiver				User			@relation("receivedMessages", fields: [receiverId], references: [id])
+	senderId				Int
+	receiverId				Int
+	createdAt				DateTime		@default(now())
+
+}
+
+model BlockedUser {
+  id        Int    @id @default(autoincrement())
+  blockerId Int
+  blockedId Int
+  blocker   User   @relation("blocker", fields: [blockerId], references: [id])
+  blocked   User   @relation("blocked", fields: [blockedId], references: [id])
+}
+
+// mohim !! https://youtu.be/phixQBZNZwU

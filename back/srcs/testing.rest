@@ -1,0 +1,177 @@
+
+
+{
+    "login": "aloteefsssiss",
+    "email": "aloe3dtfi@hoslda.com",
+    "name": "zeb123",
+    "password": "passwords1234",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0aW1lIjoxNzQyMzI5NTExMTE5LCJ1c2VySWQiOjEsImlhdCI6MTc0MjMyOTUxMSwiZXhwIjoxNzQyMzMzMTExfQ.djtfWrI8C7WTTdJQDxzgJQzGRG2qtRbeTnmCnBu299Q"
+}
+
+{
+    "login": "afsis",
+    "email": "al3dtfi@hoslda.com",
+    "name": "zeb1fd23",
+    "password": "passwords1234",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0aW1lIjoxNzQyMzI5NjE5NTQxLCJ1c2VySWQiOjIsImlhdCI6MTc0MjMyOTYxOSwiZXhwIjoxNzQyMzMzMjE5fQ.ZsJ5ltn03SX9pySs2U74FTVIUeTuOrQW1Gup8LCJ42g"
+}
+
+### Test POST request to upload a file### Test POST request to upload a file
+POST http://localhost:3000/api/atoukmat/upload
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTczOTUzNjg2MiwiZXhwIjoxNzM5NTQwNDYyfQ.twEzN4C-XF0Ns8int8Yugd8exK8YedznlunLVI0--7Y
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="file"; filename="avatar.png"
+Content-Type: image/png
+
+< /Users/atoukmat/goinfre/transbadtrip/avatar.png
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="type"
+
+profilepic
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+###
+GET http://localhost:3000/
+Content-Type: application/json
+
+
+### Test POST request to register a new user
+POST http://localhost:3000/register
+Content-Type: application/json
+
+{
+    "login": "toto",
+    "email": "trip69721@gmail.com",
+    "name": "tookman lotfi",
+    "password": "Ayoublotfi!1"
+}
+
+### Test POST request to login
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "email": "ahmed@alotfi.com",
+    "password": "Ayoublotfi!1"
+}
+
+###
+POST http://localhost:3000/friends/dddd
+Content-Type: application/json
+
+{
+    
+
+}
+### Test POST request to Google Sign-In (mocked)
+POST http://localhost:3000/google-signin
+Content-Type: application/json
+
+{
+    "email": "googleuser@example.com",
+    "name": "Google User",
+    "avatar": "googleavatar.png"
+}
+###
+
+PUT http://localhost:3000/user/aloteefiss
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0aW1lIjoxNzQxODEyNzgwNjE2LCJ1c2VySWQiOjEsImlhdCI6MTc0MTgxMjc4MCwiZXhwIjoxNzQxODE2MzgwfQ.qHITZoLON2xXCrRpEyhEvshhJlxh5SbvBYWHFxrvl_g
+
+{
+    "new_email" : "alotfffffi@1337.ma",
+    "new_name" : "ayoublorrrtfi"
+}
+
+### Test GET request to profile (protected route)
+GET http://localhost/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0aW1lIjoxNzQxODEyMDUyOTYwLCJ1c2VySWQiOjEsImlhdCI6MTc0MTgxMjA1MiwiZXhwIjoxNzQxODE1NjUyfQ.s0mLVaNrGI1IKndX-fQcpymXss6n8WxGdszjOWCG65M
+# Content-Type: application/json
+
+### Test 
+POST http://localhost:3000/2fa/activate
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0aW1lIjoxNzQyNDE2MDQ4NDUxLCJ1c2VySWQiOjIsImlhdCI6MTc0MjQxNjA0OCwiZXhwIjoxNzQyNDE5NjQ4fQ.mORtF8aiV8EDa0MNTxHb1zgzgQYjJBqW83FHO80oplw
+
+{
+    "activate": true
+}
+
+### Test 
+POST http://localhost:3000/2fa/generate
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0aW1lIjoxNzQyNDE2MDQ4NDUxLCJ1c2VySWQiOjIsImlhdCI6MTc0MjQxNjA0OCwiZXhwIjoxNzQyNDE5NjQ4fQ.mORtF8aiV8EDa0MNTxHb1zgzgQYjJBqW83FHO80oplw
+
+{
+    
+}
+###
+POST http://localhost:3000/2fa/verify
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0aW1lIjoxNzQyNDE2MDQ4NDUxLCJ1c2VySWQiOjIsImlhdCI6MTc0MjQxNjA0OCwiZXhwIjoxNzQyNDE5NjQ4fQ.mORtF8aiV8EDa0MNTxHb1zgzgQYjJBqW83FHO80oplw
+
+{
+    "otp": "212783"
+}
+### Test POST request to cancel friend request
+POST http://localhost:3000/friends/cancel
+Content-Type: application/json
+Authorization: Bearer YOUR_JWT_TOKEN
+
+{
+    "friendId": "980710"
+}
+
+###
+
+POST http://localhost:3000/friends/add
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0aW1lIjoxNzQyMzI5NjE5NTQxLCJ1c2VySWQiOjIsImlhdCI6MTc0MjMyOTYxOSwiZXhwIjoxNzQyMzMzMjE5fQ.ZsJ5ltn03SX9pySs2U74FTVIUeTuOrQW1Gup8LCJ42g
+
+{
+    "friendId": 1
+}
+
+### Test POST request to remove friend
+POST http://localhost:3000/friends/remove
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0aW1lIjoxNzQyMzI5NjE5NTQxLCJ1c2VySWQiOjIsImlhdCI6MTc0MjMyOTYxOSwiZXhwIjoxNzQyMzMzMjE5fQ.ZsJ5ltn03SX9pySs2U74FTVIUeTuOrQW1Gup8LCJ42g
+
+{
+    "friendId": 1
+}
+
+### Test POST request to list friends
+POST http://localhost:3000/friends/list
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0aW1lIjoxNzQxNDg3OTMzNjI3LCJ1c2VySWQiOjIsImlhdCI6MTc0MTQ4NzkzMywiZXhwIjoxNzQxNDkxNTMzfQ.ItoD249Smb9Eh6Om_zm4Yhg-0UcsOU8JeelvZQXZPz8
+
+{}
+
+### Test POST request to get friend requests
+POST http://localhost:3000/friends/requests
+Content-Type: application/json
+Authorization: Bearer YOUR_JWT_TOKEN
+
+{}
+
+### Test POST request to accept friend request
+POST http://localhost:3000/friends/accept
+Content-Type: application/json
+Authorization: Bearer YOUR_JWT_TOKEN
+
+{
+    "friendId": "12345"
+}
+
+
+###
+
+POST http://localhost:3000/forget_password
+Content-Type: application/json
+
+{
+    "email": "trip69721@gmail.com"
+    
+}
