@@ -115,14 +115,28 @@ export const updateSettingsPage = () => {
         const allSittingsFaData = document.querySelector('.all_settingsTOWFF_info');
         const SaveBt = document.getElementById('SaveFA');
         const switchONBtn = document.getElementById('SWitchbtn');
+        const FAval = document.querySelector('.Verify_Input_FA');
+        const FAerrormsg = document.querySelector('.FAerror');
+        const regex = /^[0-9]+$/;
         allSittingsFaData.classList.add('hide');
         switchONBtn.addEventListener('click', () => {
             allSittingsFaData.classList.remove('hide');
             allSittingsData.classList.add('blur');
         });
         SaveBt.addEventListener('click', () => {
-            allSittingsFaData.classList.add('hide');
-            allSittingsData.classList.remove('blur');
+            // allSittingsFaData.classList.add('hide');
+            // allSittingsData.classList.remove('blur');
+            if (!regex.test(FAval.value.trim()) || FAval.value.trim() === "") {
+                console.log('nik ro7ek');
+                FAerrormsg.innerHTML = "Bad Input";
+                FAval.classList.add('invalid');
+            }
+            else
+                console.log(FAval.value);
+            FAval.addEventListener('input', () => {
+                FAerrormsg.innerHTML = "";
+                FAval.classList.remove('invalid');
+            });
         });
     }
     FaSittings();

@@ -436,34 +436,40 @@ export const setupLoginPage = () => {
     
             if (hasError) return;
     
-            if (!nameRegex.test(name.value.trim())) {
+            if (!nameRegex.test(name.value.trim()))
+            {
                 name.classList.add('invalid');
                 nameMsg.innerHTML = "Invalid Name";
                 hasError = true;
             }
-            if (!lastNameRegex.test(lastname.value.trim())) {
+            if (!lastNameRegex.test(lastname.value.trim()))
+            {
                 lastname.classList.add('invalid');
                 lastnameMsg.innerHTML = "Invalid Last Name";
                 hasError = true;
             }
-            if (!usernameRegex.test(username.value.trim())) {
+            if (!usernameRegex.test(username.value.trim()))
+            {
                 username.classList.add('invalid');
                 usernameMsg.innerHTML = "Invalid Username";
                 hasError = true;
             }
-            if (!emailRegex.test(email.value.trim())) {
+            if (!emailRegex.test(email.value.trim()))
+            {
                 email.classList.add('invalid');
                 emailMsg.innerHTML = "Invalid Email";
                 hasError = true;
             }
-            if (!passwordRegex.test(password.value.trim())) {
+            if (!passwordRegex.test(password.value.trim()))
+            {
                 password.classList.add('invalid');
                 showbt1.classList.add("invalidBT");
                 passwordMsg.innerHTML = "Invalid Password";
                 hasError = true;
             }
     
-            if (password.value !== confirmPassword.value) {
+            if (password.value !== confirmPassword.value)
+            {
                 confirmPassword.classList.add('invalid');
                 showbt2.classList.add("invalidBT");
                 confirmPasswordMsg.innerHTML = "Password mismatch.";
